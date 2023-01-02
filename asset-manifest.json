@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/deploy/static/css/main.0df14444.css",
-    "main.js": "/deploy/static/js/main.0c7fbd78.js",
-    "static/js/787.26f70c15.chunk.js": "/deploy/static/js/787.26f70c15.chunk.js",
-    "static/media/hero_bg.jpg": "/deploy/static/media/hero_bg.ac3e01b58f59fd4d397a.jpg",
-    "static/media/img_1_horizontal.jpg": "/deploy/static/media/img_1_horizontal.bf715eb9ce5adc1e5087.jpg",
-    "index.html": "/deploy/index.html",
-    "main.0df14444.css.map": "/deploy/static/css/main.0df14444.css.map",
-    "main.0c7fbd78.js.map": "/deploy/static/js/main.0c7fbd78.js.map",
-    "787.26f70c15.chunk.js.map": "/deploy/static/js/787.26f70c15.chunk.js.map"
+    "main.css": "/deploy.github.io/static/css/main.99a1111a.css",
+    "main.js": "/deploy.github.io/static/js/main.d156041c.js",
+    "static/js/787.26f70c15.chunk.js": "/deploy.github.io/static/js/787.26f70c15.chunk.js",
+    "static/media/hero_bg.jpg": "/deploy.github.io/static/media/hero_bg.ac3e01b58f59fd4d397a.jpg",
+    "static/media/img_1_horizontal.jpg": "/deploy.github.io/static/media/img_1_horizontal.bf715eb9ce5adc1e5087.jpg",
+    "index.html": "/deploy.github.io/index.html",
+    "main.99a1111a.css.map": "/deploy.github.io/static/css/main.99a1111a.css.map",
+    "main.d156041c.js.map": "/deploy.github.io/static/js/main.d156041c.js.map",
+    "787.26f70c15.chunk.js.map": "/deploy.github.io/static/js/787.26f70c15.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0df14444.css",
-    "static/js/main.0c7fbd78.js"
+    "static/css/main.99a1111a.css",
+    "static/js/main.d156041c.js"
   ]
 }
