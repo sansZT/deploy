@@ -1,0 +1,391 @@
+@import '../style/scss_tool/colors';
+@import '../style/scss_tool/mixin';
+
+.Tai_Khoan {
+
+    .title {
+        font-size: 1.7rem;
+        line-height: 1rem;
+    }
+
+    .gray {
+        color: $gray-600;
+    }
+
+
+    .button {
+        button {
+            @include button($teal, $avocado, $teal);
+            padding: 5px 15px;
+        }
+    }
+
+    .tk-box {
+        border-radius: 0.5rem;
+        border: 1px solid $teal;
+        background: $white;
+
+        .opt {
+            .to {
+                display: flex;
+                color: $gray-600;
+                border: 1px solid $gray-600;
+                border-radius: 0.5rem;
+                align-items: center;
+                background: $white;
+                transition: 0.3s;
+
+                .title {
+                    font-size: 1.4rem;
+
+                }
+
+                i {
+                    margin-left: auto;
+                }
+
+                &:hover {
+                    color: $teal;
+                    border-color: $teal;
+                }
+            }
+        }
+
+
+    }
+
+
+}
+
+.user_manager {
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .button {
+        @include button($teal, $avocado, $teal);
+        padding: 5px 20px
+    }
+
+
+    form {
+
+        input,
+        textarea {
+            padding: 5px;
+            border: 1px solid $gray-400;
+            border-radius: 0.2rem;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        input[type=radio] {
+            width: auto;
+        }
+
+
+        .action {
+            button {
+                @include button($teal, $avocado, $teal);
+                padding: 5px 20px;
+            }
+        }
+
+    }
+
+
+
+    .user_table {
+        border: 1px solid $gray-400;
+        border-radius: 0.5rem;
+
+        .search_bar {
+            input {
+                padding: 5px;
+                border: 1px solid $gray-400;
+                border-radius: 0.2rem;
+                width: auto;
+                margin-bottom: 0;
+            }
+
+            button {
+                @include button($teal, $avocado, $teal);
+                padding: 5px;
+            }
+
+        }
+
+        .box {
+            max-height: 500px;
+            height: 100%;
+            overflow-y: auto;
+
+            &::-webkit-scrollbar {
+                width: 7px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: transparent;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: $teal;
+
+            }
+
+
+            .item {
+                border-bottom: 1px solid $gray-400;
+
+                button {
+                    background: transparent;
+                    border: none;
+                    outline: none;
+                }
+            }
+        }
+
+    }
+}
+
+.ghidanh_manager {
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .button {
+        @include button($teal, $avocado, $teal);
+        padding: 5px 20px
+    }
+
+
+    form {
+
+        input,
+        textarea {
+            padding: 5px;
+            border: 1px solid $gray-400;
+            border-radius: 0.2rem;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        input[type=radio] {
+            width: auto;
+        }
+
+
+        .action {
+            button {
+                @include button($teal, $avocado, $teal);
+                padding: 5px 20px;
+            }
+        }
+        
+    }
+    
+    .boxTK{
+        border: 1px solid $gray-400;
+        border-radius: 0.5rem;
+        max-height: 500px;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $teal;
+
+        }
+        
+        .itemTK{
+            border-bottom: 1px solid $gray-400;
+
+            button{
+                @include button($teal, $avocado,$teal);
+                padding: 5px ;
+            }
+        }
+
+
+    }
+    .box {
+        border: 1px solid $gray-400;
+        border-radius: 0.5rem;
+
+        .action {
+            button {
+                border: 1px solid $gray-400 ;
+                background: transparent;
+                color: $gray-600 ;
+                padding: 5px;
+                border-radius: 0.2rem;
+            }
+
+            .active {
+                border: 1px solid $teal;
+                color: $teal;
+                background: $avocado;
+            }
+        }
+
+
+        .itemC {
+            border: 1px solid $gray-400;
+            border-radius: 0.2rem;
+            min-height: 75px;
+            transition: 0.3s;
+
+            img {
+                border: 1px solid $gray-400;
+                border-radius: 0.2rem;
+                transition: 0.3s;
+            }
+
+            button {
+                @include button($teal, $avocado, $teal);
+                padding: 5px 20px;
+            }
+        }
+
+        .item {
+            border: 1px solid $gray-400;
+            border-radius: 0.2rem;
+            min-height: 75px;
+            transition: 0.3s;
+
+            button {
+                @include button($teal, $avocado, $teal);
+                padding: 5px 20px;
+            }
+
+            img {
+                border: 1px solid $gray-400;
+                border-radius: 0.2rem;
+                transition: 0.3s;
+            }
+
+
+            &:hover {
+                border: 1px solid $teal;
+                color: $teal;
+
+                img {
+                    border: 1px solid $teal;
+                }
+            }
+        }
+
+    }
+}
+
+
+.nocourse {
+
+    border: 1px solid $gray-400;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    border-radius: 0.5rem;
+
+    i,
+    p {
+        color: $gray-600;
+    }
+
+    button {
+        @include button($teal, $avocado, $teal);
+        padding: 5px 25px;
+    }
+
+}
+
+.course_table {
+    border: 1px solid $gray-400;
+    border-radius: 0.5rem;
+    background: $white;
+
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+
+    .item {
+        border: 1px solid $gray-400;
+        border-radius: 0.5rem;
+
+        img {
+            border-radius: 0.2rem;
+        }
+
+        button {
+            @include button($teal, $avocado, $teal);
+            padding: 5px 25px;
+        }
+    }
+}
+
+.Course_manager {
+    .action {}
+
+    button {
+        @include button($teal, $avocado, $teal);
+        padding: 5px 25px
+    }
+
+    .my_course {
+        border-radius: 0.5rem;
+        border: 1px solid $gray-400;
+
+
+        .item {
+            border-radius: 0.5rem;
+            border: 1px solid $gray-400;
+
+            img {
+                border-radius: 0.2rem;
+            }
+        }
+
+
+
+        input,
+        textarea {
+            padding: 5px;
+            border: 1px solid $gray-400;
+            border-radius: 0.2rem;
+            margin-bottom: 10px;
+        }
+
+        select {
+            padding: 8px;
+            border: 1px solid $gray-400;
+            border-radius: 0.2rem;
+            margin-bottom: 10px;
+
+        }
+
+        .input {
+            p {
+                border: 1px solid $gray-400;
+                border-radius: 0.2em;
+                padding: 5px !important;
+                margin-bottom: 10px !important;
+            }
+
+            img {
+                border-radius: 0.5rem;
+                border: 1px solid $gray-400;
+            }
+        }
+
+    }
+
+
+}

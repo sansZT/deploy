@@ -1,0 +1,72 @@
+@import '../style/scss_tool/colors';
+@import '../style/scss_tool/mixin';
+
+.Lien_Lac {
+
+    .banner {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url(../../images/img_1_horizontal.jpg);
+        background-position: top center;
+        background-size: cover;
+        position: relative;
+        color: white;
+        height: 30vh;
+
+        .title {
+            font-size: 2rem;
+        }
+
+        .mail {
+            font-size: 1.3rem;
+        }
+
+
+        // .overlay{
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+        //     right: 0;
+        //     bottom: 0;
+        //     background: rgba(0, 0, 0, 0.4);
+        // }
+
+
+
+    }
+
+    .formll {
+        position: relative;
+
+        form {
+            border-radius: 0.5rem;
+            border: 1px solid $gray-400;
+            position: absolute;
+            top: -25px;
+            left: 0;
+            right: 0;
+            background: $white;
+            box-shadow: $shadow;
+
+
+            input {
+                padding: 5px;
+                width: 100%;
+                border-radius: 0.2rem;
+                border: 1px solid $gray-400;
+            }
+
+            textarea{
+                padding: 5px;
+                width: 100%;
+                border: 1px solid $gray-400;
+                border-radius: 0.2rem;
+            }
+
+            button{
+                @include button($teal,$avocado,$teal);
+                padding: 5px 25px;
+            }
+        }
+    }
+
+
+}

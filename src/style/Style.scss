@@ -1,0 +1,41 @@
+@import './scss_tool/colors';
+@import './scss_tool/mixin';
+
+
+// Default
+
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: monospace ;
+    box-sizing: border-box;
+    order: 1px solid ;
+}
+
+p,h1,h2,h3,h4,h5,h6{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.Layout{
+    min-height: 100vh;
+    height: 100%;
+    padding: 50px 0 180px;
+    position: relative;
+    background: $white;
+}
+
+.goback{
+    display: flex;
+    align-items: center;
+    padding: 0 !important;
+    
+    
+}
+
+
+grammarly-desktop-integration{
+    display: none;
+}

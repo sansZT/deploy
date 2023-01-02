@@ -1,0 +1,74 @@
+@import '../scss_tool/colors';
+@import '../scss_tool/mixin';
+
+.form{
+    background: $white;
+    min-height: 75vh;
+    height: 100%;
+    .title{
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    input{
+        width: 100%;
+        padding: 5px;
+        border-radius: 0.2rem;
+        border: 1px solid $gray-400;
+        margin-bottom: 10px;
+    }
+
+    button{
+        padding: 5px 30px;
+        @include button($teal, $avocado, $teal)
+    }
+
+    .second{
+        cursor: pointer;
+        color: $gray-600;
+        &:hover{
+            color: $teal;
+        }
+    }
+}
+
+.form-edit{
+    background: $white;
+    min-height: 75vh;
+    height: 100%;
+    .title{
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    input{
+        width: 100%;
+        padding: 5px;
+        border-radius: 0.2rem;
+        border: 1px solid $gray-400;
+        margin-bottom: 10px;
+    }
+
+    input[type=radio]{
+        width: auto;
+        margin-bottom: 0;
+        margin-right: 5px;
+    }
+
+    .input{
+        p{
+            border: 1px solid $gray-400;
+            border-radius: 0.2em;
+            padding: 5px !important;
+            margin-bottom: 10px !important;
+        }
+    }
+
+    button{
+        @include button($teal, $avocado,$teal);
+        padding: 5px 0;
+    }
+
+    
+
+}

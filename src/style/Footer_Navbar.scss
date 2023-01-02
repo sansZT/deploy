@@ -1,0 +1,77 @@
+@import 'scss_tool/colors';
+@import 'scss_tool/mixin';
+
+.navbar{
+    background: $gray-900;
+    height: 50px;
+
+    .container{
+        background: $gray-900;
+    }
+
+    .navbar-brand{
+        color: $white;
+        padding: 0;
+
+        &:hover{
+            color: $white
+        }
+    }
+    
+    .navbar-toggler{
+        @include button($white,$gray-900,$white);
+        
+        
+    }
+
+    .navbar-collapse{
+        background: $gray-900;
+        button{
+            display: block;
+            padding: 8px 0;
+            color: $white;
+            background: transparent;
+            border: none;
+
+            @include text_hover($teal)
+            
+        }
+
+        .active{
+            color: $teal;
+        }
+
+    }
+}
+
+.Footer{
+    background: $gray-900;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: $gray-400;
+
+    .h{
+        color: $white;
+    }
+
+    button{
+        @include text_hover($teal);
+        background: transparent;
+        border: none;
+        display: block;
+        color: $gray-400;
+    }
+
+
+    .media{
+        border-top: 1px solid $gray-400;
+        i{
+            margin: 0 5px;
+            @include text_hover($teal);
+
+            
+        }
+    }
+}

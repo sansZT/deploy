@@ -1,0 +1,133 @@
+@import 'scss_tool/colors';
+@import 'scss_tool/mixin';
+
+
+.Trang_Chu{
+    
+    
+    .banner{
+        background-image: url('~/images/hero_bg.jpg');
+        background-size: cover;
+        position: relative;
+
+        &::after{
+            content: '';
+            background: rgba(0, 0, 0, 0.3);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+        }
+        
+
+        .banner_title{
+            position: relative;
+            z-index: 2;
+            color: $white;
+            font-size: 2rem;
+            
+            span{
+                font-size: 2rem;
+                color: $teal;
+            }
+            
+        }
+    }
+
+    .category{
+        position: relative;
+
+        .background{
+            position: absolute;
+            top: -30px;
+            right: 0;
+            left: 0;
+            
+        }
+        .option{
+            align-items: center;
+            background: $white;
+            border-radius: 0.5rem;
+            width: 100%;
+            box-shadow: $shadow;
+
+
+
+            .left, .right{
+                @include text_hover($teal)
+            }
+        }
+    }
+
+    .course{
+        
+        .title{
+            border-bottom: 1px solid $gray-400;
+        }
+
+        .show{
+            max-height: 450px;
+            overflow: auto;
+            border-bottom: 1px solid $gray-400;
+            
+            &::-webkit-scrollbar{
+                width: 7px;
+            }
+
+            &::-webkit-scrollbar-track{
+                background: transparent;
+            }
+
+            &::-webkit-scrollbar-thumb{
+                background: $teal;
+                
+            }
+
+
+            .box{
+                background: $white;
+            }
+            .notfound{
+                color: $gray-600;
+                
+            }
+        }
+    }
+
+    .reviews{
+        background: $white;
+        
+        .title{
+            font-size: 1.5rem;
+            color: $teal;
+            
+        }
+
+        .content{
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+
+            .review{
+                border: 1px solid $gray-400;
+                .hv{
+                   color: $gray-600;
+                }
+    
+                .comment{
+                    color: $gray-600;
+                    .vote{
+                        color: $yellow;
+                    }
+                }
+            }
+
+        }
+
+    }
+
+}

@@ -1,0 +1,105 @@
+@import '../scss_tool/colors';
+@import '../scss_tool/mixin';
+
+.ChiTiet_KH{
+    img{
+        border: 1px solid $gray-400;
+        border-radius: 0.5rem;
+    }
+    .title{
+        p{
+            font-size: 2rem;
+        }
+    }
+
+    .back{
+        @include text_hover($teal);
+        cursor: pointer;
+    }
+
+    .body{
+        ul{
+            list-style: none;
+            padding: 0;
+
+            i{
+                color: $teal;
+            }
+        }
+
+        .auth{
+            color: $cyan;
+            border: 1px solid $cyan;
+            border-radius: 0.5rem;
+        }
+    }
+
+    .tab-content{
+        background: $white;
+        border: 1px solid $gray-400;
+        border-radius: 0 0 0.5rem 0.5rem;
+    }
+
+    .nav-tabs{
+        border-bottom: none;
+        @include text_hover($teal);
+        
+        .nav-link{
+            color: $gray-600;
+        }
+        .active{
+            border: 1px solid $gray-400 !important;
+            border-bottom: 1px solid $white !important;
+            color: $teal !important;
+            
+            
+        }
+    }
+
+
+    .comment{
+        
+        .g{
+            color: $gray-600;
+        }
+        
+        .box{
+            border: 1px solid $gray-400;
+            border-radius: 0.5rem;
+
+        }
+    }
+
+    .area{
+        button{
+            @include button($teal, $white, $teal)
+        }
+        textarea{
+            width: 100%;
+            border: 1px solid $gray-400;
+            outline: none;
+            border-radius: 0.5rem;
+        }
+    }
+
+    .bill{
+        border: 1px solid $teal;
+        border-radius: 0.5rem;
+        background: $avocado;
+
+        .list{
+            .bb{
+                border-bottom: 1px solid $gray-300;
+                padding: 5px 0;
+                i{
+                    color: $teal;
+                }
+            }
+        }
+
+        button{
+            @include button($teal, $avocado, $teal)
+        }
+    }
+
+}
