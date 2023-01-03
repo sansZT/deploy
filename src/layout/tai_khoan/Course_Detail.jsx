@@ -37,7 +37,6 @@ const Course_Detail = () => {
 
     useEffect(() => {
         (async () => {
-            setErr("loading ...")
             let x = await coursesAPI.get_course_Detail(path.chitiet)
             let time = x[1].ngayTao.split("/")
 
@@ -51,9 +50,14 @@ const Course_Detail = () => {
             setValue("taiKhoanNguoiTao", x[1].nguoiTao.taiKhoan)
             setValue("ngayTao", `${time[2]}-${time[1]}-${time[0]}`)
 
-            setErr("")
         })()
     }, [All_Course])
+
+    useEffect(() => {
+        (async() => {
+            setErr("")
+        })()
+    }, [IndexC])
 
 
 
@@ -76,6 +80,7 @@ const Course_Detail = () => {
             let x = await GV_coursesAPI.update_course(vl)
 
             if(!x[0]){
+                setErr(x[1].data)
                 return
             }
 
@@ -84,6 +89,7 @@ const Course_Detail = () => {
             let xz = await coursesAPI.get_course_All()
             dipatch(setup_Course(xz[1]))
 
+            setErr("cập nhật thành công")
 
         }
         if(!File){
@@ -91,11 +97,14 @@ const Course_Detail = () => {
             let x = await GV_coursesAPI.update_course(vl)
 
             if(!x[0]){
+                setErr(x[1].data)
                 return
             }
 
             let xz = await coursesAPI.get_course_All()
             dipatch(setup_Course(xz[1]))
+
+            setErr("cập nhật thành công")
         }
 
 
@@ -104,9 +113,15 @@ const Course_Detail = () => {
     const del = async (mkh) => {
         setErr("loading ...")
         let x = await GV_coursesAPI.delete_course(mkh)
+
+        if(!x[0]){
+            setErr(x[1].data)
+            return 
+        }
         let z = await coursesAPI.get_course_All()
         dipatch(setup_Course(z[1]))
-        navigate("/tai-khoan/quan-ly-khoa-hoc")
+        navigate("/deploy/tai-khoan/quan-ly-khoa-hoc")
+        
 
     }
 
@@ -115,11 +130,11 @@ const Course_Detail = () => {
 
     if (IndexC == 0 && Course) {
         return (
-            <div className='Course_manager'>
+            <div className='Course_manager '>
                 <p className='title text-center mb-5'>
                     quản lý khóa học
                 </p>
-                <div className="my_course p-3">
+                <div className="my_course col-12 p-3  mx-auto ">
                     <p className='title text-center mb-4'>
                         {Course.tenKhoaHoc}
                     </p>
@@ -155,11 +170,12 @@ const Course_Detail = () => {
                             mô tả :
                             <p>{Course.moTa}</p>
                         </div>
-                        <div className="col-12">
+                        <div className="col-12  mb-5 ">
                             hình ảnh :
                             <img src={Course.hinhAnh} className="img-fluid" />
                         </div>
                     </div>
+                    <p>{Err}</p>
                     <div className="action d-flex mt-4 justify-content-between">
                         <button onClick={() => setIndexC(1)}>
                             chỉnh sửa
@@ -188,7 +204,7 @@ const Course_Detail = () => {
 
                 <form onSubmit={handleSubmit(update
                 )}
-                    className="my_course p-3 ">
+                    className="my_course col-12 p-3   mx-auto  ">
                     <p className='title mb-4 text-center'>chỉnh sửa {Course.tenKhoaHoc}</p>
                     <div className="">
                         mã khóa học : <input type="text" className='col-12' disabled

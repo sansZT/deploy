@@ -47,12 +47,12 @@ const Dang_ky = () => {
 
     if(auth){
         
-        return <Navigate to="/tai-khoan" replace={true} /> 
+        return <Navigate to="/deploy/tai-khoan" replace={true} /> 
     }
 
     if(!auth){
         return (
-            <div className='form pb-5'>
+            <div className='form py-lg-5 pb-5 col-12 col-md-6 col-lg-5 mx-auto'>
                 <form className="p-3" onSubmit={handleSubmit(regis)}>
                     <p className=' mb-3 title'>Đăng ký tài khoản</p>
                     Tài khoản : <input type="text" {...register("taiKhoan", { required: true })} />
@@ -85,7 +85,7 @@ const Dang_ky = () => {
                         <button type='submit' className='me-4'>
                             đăng ký
                         </button>
-                        <p onClick={() => navigate("/dang-nhap")}
+                        <p onClick={() => navigate("/deploy/dang-nhap")}
                             className='second mt-2'>hoặc đăng nhập</p>
                     </div>
                 </form>

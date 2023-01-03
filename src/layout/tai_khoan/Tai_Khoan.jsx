@@ -13,20 +13,20 @@ const Tai_Khoan = () => {
     let navigate = useNavigate()
 
     const logOut = () => {
-        navigate("/")
+        navigate("/deploy/")
         dispatch(logout())
     }
 
     if (!auth) {
 
-        return <Navigate to="/tai-khoan" replace={true} />
+        return <Navigate to="/deploy/tai-khoan" replace={true} />
     }
 
     if (auth) {
         return (
             <div className='Tai_Khoan'>
-                <div className="container py-4">
-                    <div className="p-3 tk-box">
+                <div className="container py-4 d-lg-flex">
+                    <div className="p-3 tk-box col-12 col-lg-6">
                         <div className="d-flex box">
 
                             <i className="far fa-user-circle fa-3x me-2"></i>
@@ -102,8 +102,8 @@ const Tai_Khoan = () => {
 
                     </div>
 
-                    <div className="my-5">
-                        <Outlet />
+                    <div className=" my-5 my-lg-0 col-lg-6 ps-lg-5 py-3">
+                        <Outlet/>
 
                     </div>
                 </div>

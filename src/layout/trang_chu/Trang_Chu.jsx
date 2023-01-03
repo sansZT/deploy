@@ -68,7 +68,7 @@ const Trang_Chu = () => {
             </div>
             <div className="category">
                 <div className="background px-4">
-                    <div className="option d-flex justify-content-around">
+                    <div className="option d-flex justify-content-around col-12 col-md-6 mx-auto">
                         <div className="left" onClick={() => changeIndex(false)}>
                             <i className="fas fa-angle-left fa-2x  "></i>
                         </div>
@@ -109,7 +109,7 @@ const Trang_Chu = () => {
                     <div className="content py-4">
                         {
                             ["A", "B", "C"].map((u, index) => {
-                                return <div key={index + 1}  className='p-2 col-12 col-md-6'>
+                                return <div key={index + 1}  className='p-2 col-12 col-md-6 col-lg-4'>
 
                                     <div className="review  p-3">
                                         <div className=" d-flex pb-3">

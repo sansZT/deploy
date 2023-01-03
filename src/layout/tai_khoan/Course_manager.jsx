@@ -88,7 +88,7 @@ const Course_manager = () => {
                     C.length == 0 ?
                         <div className="my_course my-4">
 
-                            <div className="nocourse text-center p-3">
+                            <div className="nocourse text-center col-12 p-3  mx-auto ">
                                 <div className="mx-auto">
 
                                     <div className="text">
@@ -104,7 +104,7 @@ const Course_manager = () => {
                             </div>
                         </div>
                         :
-                        <div className=' p-3  my-4'>
+                        <div className='col-12 p-3   mx-auto '>
                             <div className="action">
                                 <button onClick={() => setIndex(1)}>
                                     thêm khóa học
@@ -113,17 +113,20 @@ const Course_manager = () => {
                             <div className="my_course p-3 my-4">
                                 {
                                     C.map((c, index) => {
-                                        return <div className='item col-12 p-2 mb-3 mx-auto d-flex' key={index + 1}>
-                                            <div className="col-5">
-                                                <img src={c.hinhAnh} className="col-12" />
+                                        return <div className=' col-12 mb-4' key={index + 1}>
+                                            <div className="item d-flex p-2">
 
-                                            </div>
-                                            <div className="col-6 ps-3">
-                                                <p className='mb-2'>{c.tenKhoaHoc}</p>
-                                                <button onClick={() => navigate(c.maKhoaHoc)}>
-                                                    chi tiết
-                                                </button>
+                                                <div className="col-5">
+                                                    <img src={c.hinhAnh} className="col-12" />
 
+                                                </div>
+                                                <div className="col-6 ps-3">
+                                                    <p className='mb-2'>{c.tenKhoaHoc}</p>
+                                                    <button onClick={() => navigate(`${c.maKhoaHoc}`)}>
+                                                        chi tiết
+                                                    </button>
+
+                                                </div>
                                             </div>
                                         </div>
                                     })
@@ -139,7 +142,7 @@ const Course_manager = () => {
 
     if (Index == 1) {
         return (
-            <div className='Course_manager'>
+            <div className='Course_manager col-12 p-3'>
                 <p className='title text-center mb-5'>
                     quản lý khóa học
                 </p>

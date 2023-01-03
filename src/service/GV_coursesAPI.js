@@ -14,6 +14,7 @@ const GV_coursesAPI = {
     },
 
     delete_course: (maKhoaHoc) => {
+        console.log(maKhoaHoc);
         return fetcher.delete(`api/QuanLyKhoaHoc/XoaKhoaHoc?maKhoaHoc=${maKhoaHoc}`)
     },
 

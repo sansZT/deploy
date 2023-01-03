@@ -17,14 +17,14 @@ const Footer = () => {
                     </div>
                     <div className="col-5">
                         <p className='h'>Tất cả trang</p>
-                        <button onClick={() => navigate("/")}>
+                        <button onClick={() => navigate("/deploy/")}>
                             - Trang chủ
                         </button>
-                        <button onClick={() => navigate("/huong-dan")}>
-                            - Hướng dẫn
-                        </button>
-                        <button onClick={() => navigate("/tai-khoan")}>
+                        <button onClick={() => navigate("/deploy/tai-khoan")}>
                             - Tài khoản
+                        </button>
+                        <button onClick={() => navigate("/deploy/lien-lac")}>
+                            - liên lạc
                         </button>
                     </div>
 

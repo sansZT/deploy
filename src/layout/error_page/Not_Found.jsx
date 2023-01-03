@@ -2,8 +2,8 @@ import React from 'react'
 
 const Not_Found = () => {
     return (
-        <div>
-            <h1>not found</h1>
+        <div className='p-5 my-5 text-center'>
+            <h1>không tìm thấy trang này</h1>
         </div>
     )
 }

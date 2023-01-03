@@ -46,17 +46,14 @@ const Form_ThongTin = () => {
         setErr("cập nhật thành công")
     }
 
-    const log_out = () => {
-        navigate("/")
-        dispatch(logout())
-    }
+
 
 
 
 
     if (Index == 0) {
         return (
-            <div className='form-edit p-3' >
+            <div className='form-edit p-3 mx-auto ' >
                 <div className="container">
 
                     <div className="title mb-3">Thông tin cá nhân</div>
@@ -91,7 +88,7 @@ const Form_ThongTin = () => {
 
     if (Index == 1) {
         return (
-            <div className='form-edit p-3' >
+            <div className='form-edit p-3 mx-auto ' >
                 <div className="container">
 
                     <div className="title mb-3">

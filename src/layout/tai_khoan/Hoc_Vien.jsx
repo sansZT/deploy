@@ -10,7 +10,7 @@ const Hoc_Vien = () => {
     if (auth.chiTietKhoaHocGhiDanh.length == 0) {
         return (
             <div className='Hoc_Vien'>
-                <div className="nocourse text-center p-3">
+                <div className="nocourse text-center p-3  p-3  mx-auto ">
                     <div className="mx-auto">
 
                         <div className="text">
@@ -18,7 +18,7 @@ const Hoc_Vien = () => {
 
                         </div>
                         <p className='my-2'>hiện không có khóa học nào đã <br /> ghi danh</p>
-                        <button onClick={() => navigate("/")}>
+                        <button onClick={() => navigate("/deploy/")}>
                             thêm khóa học
                         </button>
                     </div>
@@ -31,9 +31,8 @@ const Hoc_Vien = () => {
     if (auth.chiTietKhoaHocGhiDanh.length != 0) {
         return (
             <div className='Hoc_Vien'>
-                <div className="course_table p-3">
-                    <p className='title text-center'>khóa học đã ghi danh
-                        [ {auth.chiTietKhoaHocGhiDanh.length} ]</p>
+                <div className="course_table p-3 mx-auto ">
+                    <p className='title text-center'>khóa học đã ghi danh</p>
                     <div className="mt-4">
                         {
                             auth.chiTietKhoaHocGhiDanh.map((c, index) => {
@@ -44,7 +43,7 @@ const Hoc_Vien = () => {
                                     </div>
                                     <div className="col-5 ps-2">
                                         <p className='mb-2'>{c.tenKhoaHoc}</p>
-                                        <button onClick={() => navigate(`/${c.maKhoaHoc}`)}>
+                                        <button onClick={() => navigate(`/deploy/kh/${c.maKhoaHoc}`)}>
                                             chi tiết
                                         </button>
                                     </div>

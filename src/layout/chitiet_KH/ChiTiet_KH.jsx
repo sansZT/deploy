@@ -5,29 +5,28 @@ import coursesAPI from '../../service/coursesAPI'
 import authAPI from '../../service/authAPI'
 import { Tab, Tabs } from 'react-bootstrap'
 import '../../style/widget_style/ChiTiet_KH.scss'
-import {login} from '../../reducer/authReducer' 
+import { login } from '../../reducer/authReducer'
 
 const ChiTiet_KH = () => {
-    let {auth} = useSelector(state => state.authReducer)
+    let { auth } = useSelector(state => state.authReducer)
     const [Course, setCourse] = useState()
     const [Ghidanh, setGhidanh] = useState(0)
     const [Err, setErr] = useState()
     let dispatch = useDispatch()
     let navigate = useNavigate()
-    let { maKhoaHoc } = useParams()
+    let {maKhoaHoc} = useParams()
 
     useEffect(() => {
         (async () => {
-            setErr("")
             let x = await coursesAPI.get_course_Detail(maKhoaHoc)
 
-            if(!auth){
+            if (!auth) {
                 setGhidanh(2)
                 setCourse(x[1])
                 return
             }
             let z = auth.chiTietKhoaHocGhiDanh.find(c => c.maKhoaHoc == maKhoaHoc)
-            z? setGhidanh(1) : setGhidanh(0)
+            z ? setGhidanh(1) : setGhidanh(0)
 
             setCourse(x[1])
         })()
@@ -35,32 +34,32 @@ const ChiTiet_KH = () => {
 
     const dangky = async () => {
         setErr("Loading ...")
-        let x = await authAPI.dang_ky({maKhoaHoc: Course.maKhoaHoc, taiKhoan: auth.taiKhoan})
-  
-        
-        if(!x[0]){
+        let x = await authAPI.dang_ky({ maKhoaHoc: Course.maKhoaHoc, taiKhoan: auth.taiKhoan })
+
+
+        if (!x[0]) {
             setErr(x[1].data)
-            return 
+            return
         }
-        
+
         let z = await authAPI.information()
-        dispatch(login({auth: z[1]}))
+        dispatch(login({ auth: z[1] }))
         setErr(x[1])
-    
+
     }
 
     const huydangky = async () => {
         setErr("Loading ...")
-        let x = await authAPI.huy_dang_ky({maKhoaHoc: Course.maKhoaHoc, taiKhoan: auth.taiKhoan})
+        let x = await authAPI.huy_dang_ky({ maKhoaHoc: Course.maKhoaHoc, taiKhoan: auth.taiKhoan })
 
 
-        if(!x[0]){
+        if (!x[0]) {
             setErr(x[1].data)
-            return 
+            return
         }
-        
+
         let z = await authAPI.information()
-        dispatch(login({auth: z[1]}))
+        dispatch(login({ auth: z[1] }))
         setErr(x[1])
 
     }
@@ -68,68 +67,73 @@ const ChiTiet_KH = () => {
 
     if (Course) {
         return (
-            <div className='ChiTiet_KH'>
+            <div className='ChiTiet_KH py-lg-3'>
                 <div className="container py-2">
-                    <p className='back' onClick={() => navigate(-1)}> 
-                    <i className="fas fa-angle-left"></i> quay lại</p>
+                    <p className='back' onClick={() => navigate(-1)}>
+                        <i className="fas fa-angle-left"></i> quay lại</p>
 
                     <div className="title">
                         <p>{Course.tenKhoaHoc}</p>
                     </div>
-                    <img src={Course.hinhAnh} className="col-12" />
+                    <div className="d-md-flex">
+                        <img src={Course.hinhAnh} className="col-12 col-md-6" />
+                        <div className="col-12 col-md-6 ps-4">
+                            <div className="bill p-3 col-12">
 
-                    <div className="body my-4">
-                        <div className="bill p-3 col-12 my-4">
 
+                                <div className="list">
+                                    <div className="bb d-flex">
+                                        <p className="col-7">học phí</p>
 
-                            <div className="list">
-                                <div className="bb d-flex">
-                                    <p className="col-7">học phí</p>
+                                        <span className='col-5 text-end'>0 đ</span>
+                                    </div>
+                                    <div className="bb d-flex">
+                                        <p className='col-7'>ngôn ngữ</p>
 
-                                    <span className='col-5 text-end'>0 đ</span>
+                                        <span className='col-5 text-end'>tiếng việt</span>
+                                    </div>
+                                    <div className="bb d-flex">
+                                        <p className='col-7'>thời lượng</p>
+
+                                        <span className='col-5 text-end'>20 giờ</span>
+                                    </div>
+                                    <div className="bb d-flex">
+                                        <p className='col-7'>chứng nhận</p>
+
+                                        <span className='col-5 text-end'>
+                                            <i className="fa fa-check "></i>
+                                        </span>
+                                    </div>
+
                                 </div>
-                                <div className="bb d-flex">
-                                    <p className='col-7'>ngôn ngữ</p>
 
-                                    <span className='col-5 text-end'>tiếng việt</span>
+                                <div className="d-flex mt-4 justify-content-between">
+                                    <p className=''>
+                                        {Err}
+                                    </p>
+                                    {
+                                        Ghidanh == 1 ?
+                                            <button onClick={huydangky}
+                                                className='col-5 p-2 ms-auto'>
+                                                hủy ghi danh
+                                            </button> :
+                                            Ghidanh == 0 ?
+                                                <button onClick={dangky}
+                                                    className='col-5 p-2 ms-auto'>
+                                                    ghi danh
+                                                </button> :
+                                                Ghidanh == 2 ?
+                                                    <button className='col-12 p-2'>
+                                                        cần tài khoản mới ghi danh được
+                                                    </button> : ""
+                                    }
                                 </div>
-                                <div className="bb d-flex">
-                                    <p className='col-7'>thời lượng</p>
-
-                                    <span className='col-5 text-end'>20 giờ</span>
-                                </div>
-                                <div className="bb d-flex">
-                                    <p className='col-7'>chứng nhận</p>
-
-                                    <span className='col-5 text-end'>
-                                        <i className="fa fa-check "></i>
-                                    </span>
-                                </div>
-
                             </div>
 
-                            <div className="d-flex mt-4 justify-content-between">
-                                <p className=''>
-                                    {Err}
-                                </p>
-                                {
-                                    Ghidanh == 1 ? 
-                                    <button onClick={huydangky} 
-                                    className='col-5 p-2 ms-auto'>
-                                        hủy ghi danh
-                                    </button> :
-                                    Ghidanh == 0 ?
-                                    <button onClick={dangky} 
-                                    className='col-5 p-2 ms-auto'>
-                                        ghi danh
-                                    </button> :
-                                    Ghidanh == 2 ?
-                                    <button className='col-12 p-2'>
-                                        cần tài khoản mới ghi danh được
-                                    </button> : ""
-                                }
-                            </div>
                         </div>
+                    </div>
+
+                    <div className="body my-4 col-12 col-lg-8">
 
 
                         <div className="">

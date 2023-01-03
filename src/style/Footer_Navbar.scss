@@ -3,7 +3,8 @@
 
 .navbar{
     background: $gray-900;
-    height: 50px;
+    width: 100%;
+    background: $gray-900;
 
     .container{
         background: $gray-900;
@@ -32,6 +33,12 @@
             color: $white;
             background: transparent;
             border: none;
+            a{
+                text-decoration: none;
+                color: $white;
+
+                @include text_hover($teal)
+            }
 
             @include text_hover($teal)
             

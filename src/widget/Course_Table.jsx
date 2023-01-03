@@ -27,7 +27,7 @@ const Course_Table = ({ data }) => {
                                 <p className="date">{c.ngayTao}</p>
 
                                 <button className='col-6 col-md-6 my-2'
-                                onClick={() => navigate(`/${c.maKhoaHoc}`)}>
+                                onClick={() => navigate(`/deploy/kh/${c.maKhoaHoc}`)}>
                                     chi tiết
                                 </button>
                             </div>

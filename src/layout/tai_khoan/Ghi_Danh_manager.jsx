@@ -115,7 +115,6 @@ const Ghi_Danh_manager = () => {
 
 
 
-
     return (
         <div className='ghidanh_manager'>
             <p className="title text-center">quản lý ghi danh</p>
@@ -219,6 +218,7 @@ const Ghi_Danh_manager = () => {
                             </div>
                             :
                             Users.length != 0 && T == 2 ?
+                            
                                 <div className="">
                                     <p className='my-3'>{Err}</p>
 

@@ -43,15 +43,11 @@ const Dang_nhap = () => {
     }
     if(auth){
         
-        return <Navigate to="/tai-khoan" replace={true} /> 
+        return <Navigate to="/deploy/tai-khoan" replace={true} /> 
     }
     if(!auth){
             return (
-                <div className='form mt-2'>
-                <button className='goback mx-3'>
-                    <i className="fas fa-chevron-left  "></i>
-                    quay lại
-                </button>
+                <div className='form py-lg-5 mt-2 col-12 col-md-6 col-lg-5 mx-auto'>
                 <form className="p-3" onSubmit={handleSubmit(log)}>
                     <p className='title mb-3'>Đăng nhập</p>
                     Tài khoản : <input type="text" placeholder='tài khoản'
@@ -76,7 +72,7 @@ const Dang_nhap = () => {
                         <button type='submit' className='me-4'>
                             đăng nhập
                         </button>
-                        <p onClick={() => navigate("/dang-ky")}
+                        <p onClick={() => navigate("/deploy/dang-ky")}
                         className='second mt-2'>hoặc đăng ký</p>
                     </div>
 

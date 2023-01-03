@@ -58,13 +58,14 @@ const User_manager = () => {
     useEffect(() => {
         (async () => {
             reset()
-            setErr()
+            setErr("")
         })()
     }, [Index])
 
     const del = async (tk) => {
         setErr("loading ...")
         let x = await GV_usersAPI.delete_user(tk)
+        console.log(x);
         if (!x[0]) {
             setErr(x[1].data)
             return
@@ -73,6 +74,8 @@ const User_manager = () => {
         let z = await GV_usersAPI.get_user_All()
         dispatch(setup_User(z[1]))
         setErr(x[1])
+
+        
 
     }
 
@@ -127,14 +130,14 @@ const User_manager = () => {
 
     if (Index == 0) {
         return (
-            <div className='user_manager'>
+            <div className='user_manager mx-auto col-lg-12'>
                 <p className="title text-center">quản lý người dùng</p>
-                <div className="my-5">
+                <div className="my-5 ">
                     <button onClick={() => setIndex(2)}
                         className='button'>
                         thêm người dùng
                     </button>
-                    <div className="user_table mt-3">
+                    <div className="user_table mt-3 ">
                         <form onSubmit={handleSubmitS(search)}
                             className="m-3 mb-4 search_bar d-flex justify-content-between">
                             <input {...registerS("taiKhoan")}
@@ -184,7 +187,7 @@ const User_manager = () => {
             <div className='user_manager'>
                 <p className="title text-center">quản lý người dùng</p>
                 <div className="my-5">
-                    <div className="user_table mt-3 p-3">
+                    <div className="user_table mt-3 p-3 mx-auto">
                         <div className="title text-center mb-5">chỉnh sửa tài khoản </div>
 
                         <form onSubmit={handleSubmit(update)}>
@@ -246,7 +249,7 @@ const User_manager = () => {
             <div className='user_manager'>
                 <p className="title text-center">quản lý người dùng</p>
                 <div className="my-5">
-                    <div className="user_table mt-3 p-3">
+                    <div className="user_table mt-3 p-3 mx-auto">
                         <div className="title text-center mb-5">thêm người dùng</div>
 
                         <form onSubmit={handleSubmit(create)}>

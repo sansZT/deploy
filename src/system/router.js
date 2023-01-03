@@ -1,7 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom'
 import Layout from '../layout/Layout'
 import Trang_Chu from '../layout/trang_chu/Trang_Chu'
-import Huong_Dan from '../layout/huong_dan/Huong_Dan'
 import Tai_Khoan from '../layout/tai_khoan/Tai_Khoan'
 import Not_Found from '../layout/error_page/Not_Found'
 import ChiTiet_KH from '../layout/chitiet_KH/ChiTiet_KH'
@@ -21,10 +20,9 @@ import Ghi_Danh_manager from '../layout/tai_khoan/Ghi_Danh_manager'
 
 const router = createBrowserRouter([
     {
-        path: "/", element: <Layout />, children: [
+        path: "/deploy/", element: <Layout />, children: [
             { index: true, element: <Trang_Chu /> },
-            { path: ":maKhoaHoc", element: <ChiTiet_KH /> },
-            { path: "huong-dan", element: <Huong_Dan /> },
+            { path: "kh/:maKhoaHoc", element: <ChiTiet_KH /> },
             { path: "dang-ky", element: <Dang_ky /> },
             { path: "dang-nhap", element: <Dang_nhap /> },
             { path: "lien-lac", element: <Lien_Lac /> },
